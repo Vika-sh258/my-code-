@@ -1,0 +1,12 @@
+T=int(input())
+N=int(input())
+
+A = list(map(int,input().split()))
+B=[]
+for i in A:
+    B.append(2*i)
+M=0
+for i in B:
+    M = M ^ i
+print(M)
+    
