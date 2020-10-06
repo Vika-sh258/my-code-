@@ -1,0 +1,45 @@
+def even(h):
+    if(h%2==0):
+        return True
+    else:
+        return False
+def odd(h):
+    if(h%2==0):
+        return False
+    else:
+        return True
+
+T=int(input())
+for j in range(0,T):
+    N,Min,Max = map(int,input().split(' '));
+    total = Max - Min + 1
+    if(even(total)):
+        E=int(total/2)
+        O=int(total/2)
+    else:
+        if(odd(Min)):
+            O=int(total/2)+1
+            E=int(total/2)
+        else:
+            E=int(total/2)+1
+            O=int(total/2)
+   # print(total,E,O)
+    for i in range(0,N):
+        total = E + O
+        w,b=map(int,input().split());
+        if(even(w) and even(b)):
+            EE=total
+            OO=0
+        elif(even(w) and odd(b)):
+            OO=total
+            EE = 0
+        elif(odd(w) and odd(b)):
+            OO= E;
+            EE=O;
+        elif(odd(w) and even(b)):
+            OO=O
+            EE=E
+        E=EE;
+        O=OO;
+    print(E,O)
+        
