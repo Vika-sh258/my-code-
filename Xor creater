@@ -8,5 +8,6 @@ for i in A:
 M=0
 for i in B:
     M = M ^ i
-print(M)
+
+print("Value of all xor -> ",M)
     
